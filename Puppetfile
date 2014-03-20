@@ -5,5 +5,5 @@ mod "motd",
     :git => "https://github.com/h0tbird/puppet-motd.git"
 
 mod "r_base",
-    :git  => "https://github.com/h0tbird/puppet.git"
+    :git  => "https://github.com/h0tbird/puppet.git",
     :path => "roles/r_base"
