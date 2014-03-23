@@ -24,8 +24,7 @@ RUN rm -rf /etc/puppet && \
     git clone https://github.com/h0tbird/puppet.git /etc/puppet && \
     rm -rf /etc/puppet/modules /etc/puppet/roles
 
-ADD Puppetfile /etc/puppet/Puppetfile
-ADD site.pp /etc/puppet/manifests/site.pp
+ADD puppet /etc/puppet
 
 RUN cd /etc/puppet && \
     librarian-puppet install && \
