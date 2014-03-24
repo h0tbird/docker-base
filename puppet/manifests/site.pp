@@ -9,4 +9,4 @@ stage { 'post': require => Stage['main'] }
 # Include:
 #------------------------------------------------------------------------------
 
-notify { 'Containerized base OS': }
+include r_base::container

@@ -31,7 +31,7 @@ RUN rm -rf /etc/puppet && \
 ADD puppet /etc/puppet
 
 #------------------------------------------------------------------------------
-# Get puppet modules and apply the manifest:
+# Get the isolated puppet modules and apply the manifest:
 #------------------------------------------------------------------------------
 
 RUN cd /etc/puppet && \
