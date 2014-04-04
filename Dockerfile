@@ -11,7 +11,8 @@ MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 
 RUN yum update -y && \
     yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm && \
-    yum install -y git puppet rubygem-deep-merge
+    yum install -y git puppet rubygem-deep-merge && \
+    yum clean all
 
 #------------------------------------------------------------------------------
 # Install librarian puppet to manage isolated project dependencies:
