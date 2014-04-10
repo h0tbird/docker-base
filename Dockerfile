@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# docker build -rm -t registry.demo.lan:5000/base .
+# docker build --rm -t registry.demo.lan:5000/base .
 #------------------------------------------------------------------------------
 
 FROM registry.demo.lan:5000/centos
