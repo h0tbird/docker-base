@@ -7,13 +7,13 @@ FROM registry.demo.lan:5000/centos
 MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 
 #------------------------------------------------------------------------------
-# Update the system and install git, puppet and supervisor:
+# Update the system and install git and puppet:
 #------------------------------------------------------------------------------
 
 RUN yum update -y && \
     yum install -y http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
     yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm && \
-    yum install -y git puppet rubygem-deep-merge supervisor && \
+    yum install -y git puppet rubygem-deep-merge && \
     yum clean all
 
 #------------------------------------------------------------------------------
