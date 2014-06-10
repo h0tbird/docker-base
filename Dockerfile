@@ -18,7 +18,7 @@ ENV container docker
 
 RUN yum update -y && \
     yum install -y http://yum.puppetlabs.com/puppetlabs-release-fedora-20.noarch.rpm && \
-    yum install -y git puppet && \
+    yum install -y git puppet rubygem-deep-merge && \
     yum clean all
 
 #------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ ADD puppet /etc/puppet
 
 RUN cd /etc/puppet && \
     librarian-puppet install && \
-    puppet apply /etc/puppet/manifests/site.pp
+    puppet apply /etc/puppet/environments/production/manifests/site.pp
 
 #------------------------------------------------------------------------------
 # Require the /sys/fs/cgroup volume mounted and execute the init command:
