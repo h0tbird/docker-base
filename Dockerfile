@@ -48,7 +48,7 @@ RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && \
 
 RUN rm -rf /etc/puppet && \
     git clone https://github.com/h0tbird/puppet.git /etc/puppet && \
-    rm -rf /etc/puppet/modules /etc/puppet/roles
+    rm -rf /etc/puppet/environments/production/*
 
 ADD puppet /etc/puppet
 
