@@ -1,9 +1,9 @@
 #------------------------------------------------------------------------------
-# BUILD: docker build --rm -t fedora-base .
-# RUN:   docker run --privileged -d -P -v /sys/fs/cgroup:/sys/fs/cgroup:ro fedora-base
+# BUILD: docker build --rm -t centos-base .
+# RUN:   docker run --privileged -d -P -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos-base
 #------------------------------------------------------------------------------
 
-FROM fedora:latest
+FROM h0tbird/centos-7-rc:latest
 MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 
 #------------------------------------------------------------------------------
@@ -17,8 +17,9 @@ ENV container docker
 #------------------------------------------------------------------------------
 
 RUN yum update -y && \
-    yum install -y http://yum.puppetlabs.com/puppetlabs-release-fedora-20.noarch.rpm && \
-    yum install -y git puppet rubygem-deep-merge && \
+    rpm --import http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs && \
+    yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm && \
+    yum install -y git puppet rubygem-bundler rubygem-deep-merge && \
     yum clean all
 
 #------------------------------------------------------------------------------
