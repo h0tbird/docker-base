@@ -3,7 +3,7 @@
 # RUN:   docker run --privileged -d -P -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos-base
 #------------------------------------------------------------------------------
 
-FROM h0tbird/centos-7-rc:latest
+FROM h0tbird/centos-7-rc
 MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 
 #------------------------------------------------------------------------------
