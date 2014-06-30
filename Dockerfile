@@ -13,7 +13,7 @@ MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 ENV container docker
 
 #------------------------------------------------------------------------------
-# Update the system and install git and puppet:
+# Update the system and install git, puppet and rubygems:
 #------------------------------------------------------------------------------
 
 RUN yum update -y && \
@@ -37,7 +37,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants && \
     rm -f /lib/systemd/system/anaconda.target.wants/*
 
 #------------------------------------------------------------------------------
-# Install librarian puppet to manage isolated project dependencies:
+# Install r10k to manage isolated project dependencies:
 #------------------------------------------------------------------------------
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && \
