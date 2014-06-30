@@ -1,6 +1,0 @@
-mod "h0tbird/r_base",
-    :git  => "https://github.com/h0tbird/puppet.git",
-    :path => "environments/production/roles/r_base"
-
-mod "h0tbird/sshd",
-    :git => "https://github.com/h0tbird/puppet-sshd.git"

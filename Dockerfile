@@ -19,7 +19,7 @@ ENV container docker
 RUN yum update -y && \
     rpm --import http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs && \
     yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm && \
-    yum install -y git puppet rubygem-bundler && \
+    yum install -y git puppet rubygems && \
     yum clean all
 
 #------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants && \
 #------------------------------------------------------------------------------
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && \
-    gem install librarian-puppet
+    gem install r10k
 
 #------------------------------------------------------------------------------
 # Setup puppet:
@@ -57,8 +57,9 @@ ADD puppet /etc/puppet
 # Get the isolated puppet modules and apply the manifest:
 #------------------------------------------------------------------------------
 
-RUN cd /etc/puppet && \
-    librarian-puppet install && \
+RUN cd /etc/puppet/environments/production && \
+    r10k puppetfile install && \
+    FACTER_container=docker \
     puppet apply /etc/puppet/environments/production/manifests/site.pp
 
 #------------------------------------------------------------------------------

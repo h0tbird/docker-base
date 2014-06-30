@@ -1,0 +1,5 @@
+mod 'r_base',
+  :git => 'https://github.com/h0tbird/puppet-r_base.git'
+
+mod 'sshd',
+  :git => 'https://github.com/h0tbird/puppet-sshd.git'
