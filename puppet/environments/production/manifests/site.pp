@@ -15,4 +15,4 @@ Package { allow_virtual => true }
 # Include:
 #------------------------------------------------------------------------------
 
-include "::r_base::${::virtual}"
+include ::r_base
