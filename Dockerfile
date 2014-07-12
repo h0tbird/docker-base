@@ -19,7 +19,7 @@ ENV container docker
 RUN yum update -y && \
     rpm --import http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs && \
     yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm && \
-    yum install -y git puppet rubygems && \
+    yum install -y git puppet rubygems rubygem-deep-merge && \
     yum clean all
 
 #------------------------------------------------------------------------------
