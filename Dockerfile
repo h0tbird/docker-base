@@ -1,9 +1,9 @@
 #------------------------------------------------------------------------------
-# BUILD: docker build --rm -t centos-base .
-# RUN:   docker run --privileged -d -P -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos-base
+# BUILD: docker build --rm -t h0tbird/base .
+# RUN:   docker run --privileged -d -P -v /sys/fs/cgroup:/sys/fs/cgroup:ro h0tbird/base
 #------------------------------------------------------------------------------
 
-FROM h0tbird/centos-7-rc
+FROM h0tbird/centos
 MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 
 #------------------------------------------------------------------------------
