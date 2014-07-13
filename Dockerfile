@@ -66,6 +66,6 @@ RUN cd /etc/puppet/environments/production && \
 # Require the /sys/fs/cgroup volume mounted and execute the init command:
 #------------------------------------------------------------------------------
 
-EXPOSE 22
+EXPOSE 22/tcp
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/usr/sbin/init"]
