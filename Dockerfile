@@ -1,6 +1,5 @@
 #------------------------------------------------------------------------------
-# BUILD: docker build --rm -t h0tbird/base .
-# RUN:   docker run --privileged -d -P -v /sys/fs/cgroup:/sys/fs/cgroup:ro h0tbird/base
+# Set the base image for subsequent instructions:
 #------------------------------------------------------------------------------
 
 FROM h0tbird/centos
