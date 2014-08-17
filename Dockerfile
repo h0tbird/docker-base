@@ -33,7 +33,9 @@ RUN (cd /lib/systemd/system/sysinit.target.wants && \
     rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
     rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
     rm -f /lib/systemd/system/basic.target.wants/*; \
-    rm -f /lib/systemd/system/anaconda.target.wants/*
+    rm -f /lib/systemd/system/anaconda.target.wants/*; \
+    rm -f /etc/systemd/system/default.target; \
+    ln -s /usr/lib/systemd/system/multi-user.target /etc/systemd/system/default.target
 
 #------------------------------------------------------------------------------
 # Install r10k to manage isolated project dependencies:
