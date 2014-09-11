@@ -1,9 +1,6 @@
 mod 'r_base',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-r_base.git'
 
-mod 'stdlib',
-  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
-
 mod 'users',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-users.git'
 
