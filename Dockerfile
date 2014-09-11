@@ -61,6 +61,8 @@ ADD puppet /etc/puppet
 RUN cd /etc/puppet/environments/production && \
     r10k puppetfile install && \
     FACTER_docker_build=true \
+    FACTER_is_virtual=true \
+    FACTER_virtual=docker \
     puppet apply /etc/puppet/environments/production/manifests/site.pp
 
 #------------------------------------------------------------------------------
