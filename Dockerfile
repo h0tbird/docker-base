@@ -69,5 +69,5 @@ RUN cd /etc/puppet/environments/production && \
 # Expose ports and set systemd as default process:
 #------------------------------------------------------------------------------
 
-EXPOSE 22/tcp
+# EXPOSE 22/tcp
 CMD ["/usr/sbin/init"]
