@@ -15,12 +15,14 @@ ENV container docker
 # Update the system and install git, puppet and rubygems:
 #------------------------------------------------------------------------------
 
-RUN yum update -y && \
-    rpm --import http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs && \
-    yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm && \
-    rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 && \
-    yum install -y http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm && \
-    yum install -y git wget puppet rubygems rubygem-deep-merge && \
+RUN yum update -y && rpm --import \
+    http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs \
+    http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 && \
+    yum install -y \
+    http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm \
+    http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm && \
+    yum install -y \
+    git wget puppet rubygems rubygem-deep-merge && \
     yum clean all
 
 #------------------------------------------------------------------------------
