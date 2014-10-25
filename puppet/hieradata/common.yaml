@@ -12,7 +12,8 @@ r_base::ssh:
 
 # terminfo
 r_base::terminfo:
- purge: true
+ purge: false
  backup: false
+ recurse: 'remote'
 
 ...
