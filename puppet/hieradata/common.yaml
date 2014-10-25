@@ -13,5 +13,6 @@ r_base::ssh:
 # terminfo
 r_base::terminfo:
  purge: true
+ backup: false
 
 ...
