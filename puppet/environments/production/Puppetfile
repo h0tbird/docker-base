@@ -1,18 +1,6 @@
 mod 'r_base',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-r_base.git'
 
-mod 'users',
-  :git => 'https://h0tbird@github.com/h0tbird/puppet-users.git'
-
-mod 'hosts',
-  :git => 'https://h0tbird@github.com/h0tbird/puppet-hosts.git'
-
-mod 'factsdotd',
-  :git => 'https://h0tbird@github.com/h0tbird/puppet-factsdotd.git'
-
-mod 'yum',
-  :git => 'https://h0tbird@github.com/h0tbird/puppet-yum.git'
-
 mod 'sshd',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-sshd.git'
 
