@@ -1,6 +1,10 @@
 mod 'r_base',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-r_base.git'
 
+mod 'stdlib',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git',
+  :tag => '4.3.2'
+
 mod 'sshd',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-sshd.git'
 
