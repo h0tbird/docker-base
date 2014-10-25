@@ -10,4 +10,8 @@ r_base::ssh:
  enable: true
  version: 'latest'
 
+# terminfo
+r_base::terminfo:
+ purge: true
+
 ...

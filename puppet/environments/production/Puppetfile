@@ -15,3 +15,6 @@ mod 'yum',
 
 mod 'sshd',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-sshd.git'
+
+mod 'terminfo',
+  :git => 'https://h0tbird@github.com/h0tbird/puppet-terminfo.git'
