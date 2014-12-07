@@ -10,6 +10,8 @@ MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
 #------------------------------------------------------------------------------
 
 ENV container docker
+ENV FACTER_is_virtual true
+ENV FACTER_virtual docker
 
 #------------------------------------------------------------------------------
 # Update the system and install git, puppet and rubygems:
@@ -43,8 +45,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants && \
 # Install r10k to manage isolated project dependencies:
 #------------------------------------------------------------------------------
 
-RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && \
-    gem install r10k
+RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && gem install r10k
 
 #------------------------------------------------------------------------------
 # Setup puppet:
@@ -62,8 +63,6 @@ ADD puppet /etc/puppet
 RUN cd /etc/puppet/environments/production && \
     r10k puppetfile install && \
     FACTER_docker_build=true \
-    FACTER_is_virtual=true \
-    FACTER_virtual=docker \
     FACTER_fqdn=base00.demo.lan \
     puppet apply /etc/puppet/environments/production/manifests/site.pp
 
@@ -71,5 +70,4 @@ RUN cd /etc/puppet/environments/production && \
 # Expose ports and set systemd as default process:
 #------------------------------------------------------------------------------
 
-# EXPOSE 22/tcp
 CMD ["/usr/sbin/init"]
