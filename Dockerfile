@@ -51,8 +51,7 @@ RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && \
 #------------------------------------------------------------------------------
 
 RUN rm -rf /etc/puppet && \
-    git clone https://github.com/h0tbird/puppet.git /etc/puppet && \
-    rm -rf /etc/puppet/{environments,hieradata}
+    git clone https://github.com/h0tbird/puppet.git /etc/puppet
 
 ADD puppet /etc/puppet
 
@@ -65,6 +64,7 @@ RUN cd /etc/puppet/environments/production && \
     FACTER_docker_build=true \
     FACTER_is_virtual=true \
     FACTER_virtual=docker \
+    FACTER_fqdn=base00.demo.lan \
     puppet apply /etc/puppet/environments/production/manifests/site.pp
 
 #------------------------------------------------------------------------------
