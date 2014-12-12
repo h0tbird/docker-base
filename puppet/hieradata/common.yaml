@@ -29,8 +29,8 @@ r_base::users:
 
 # ssh
 r_base::ssh:
- server_permit_user_environment: yes
- server_use_dns: no
+ server_permit_user_environment: 'yes'
+ server_use_dns: 'no'
 
 # terminfo
 r_base::terminfo:
