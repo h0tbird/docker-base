@@ -14,5 +14,8 @@ mod 'users',
 mod 'ssh',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-ssh.git'
 
+mod 'p_ssh',
+  :git => 'https://h0tbird@github.com/h0tbird/puppet-p_ssh.git'
+
 mod 'terminfo',
   :git => 'https://h0tbird@github.com/h0tbird/puppet-terminfo.git'
