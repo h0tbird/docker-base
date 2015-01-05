@@ -22,8 +22,7 @@ RUN yum update -y && rpm --import \
     http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 && \
     yum install -y http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm \
     http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm && \
-    yum install -y git wget puppet rubygems rubygem-deep-merge && \
-    yum clean all
+    yum install -y git wget puppet rubygems && yum clean all
 
 #------------------------------------------------------------------------------
 # Setup systemd:
@@ -51,9 +50,7 @@ RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc && gem install r10k
 # Setup puppet:
 #------------------------------------------------------------------------------
 
-RUN rm -rf /etc/puppet && \
-    git clone https://github.com/h0tbird/puppet.git /etc/puppet
-
+RUN rm -rf /etc/puppet && git clone https://github.com/h0tbird/puppet.git /etc/puppet
 ADD puppet /etc/puppet
 
 #------------------------------------------------------------------------------
@@ -67,7 +64,7 @@ RUN cd /etc/puppet/environments/production && \
     puppet apply /etc/puppet/environments/production/manifests/site.pp
 
 #------------------------------------------------------------------------------
-# Expose ports and set systemd as default process:
+# Set systemd as default process:
 #------------------------------------------------------------------------------
 
 CMD ["/usr/sbin/init"]
